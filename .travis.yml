@@ -1,7 +1,4 @@
 dist: xenial
-arch:
-    - amd64
-    - ppc64le
 language: scala
 cache:
   directories:
@@ -12,11 +9,23 @@ matrix:
     - jdk: openjdk8
       scala: 2.10.7
     - jdk: openjdk8
+      scala: 2.10.7
+      arch: ppc64le  
+    - jdk: openjdk8
       scala: 2.11.12
+    - jdk: openjdk8
+      scala: 2.11.12 
+      arch: ppc64le  
     - jdk: openjdk8
       scala: 2.12.9
     - jdk: openjdk8
+      scala: 2.12.9
+      arch: ppc64le   
+    - jdk: openjdk8
       scala: 2.13.0
+    - jdk: openjdk8
+      scala: 2.13.0 
+      arch: ppc64le  
 script:
 - sbt ++$TRAVIS_SCALA_VERSION test examples/test doc
 after_success:
